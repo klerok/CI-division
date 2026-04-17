@@ -5,8 +5,11 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-      "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+        "test": "NODE_OPTIONS=--experimental-vm-modules jest"
     },
     "author": "",
-    "license": "ISC"
-  }
+    "license": "ISC",
+    "devDependencies": {
+        "jest": "^30.3.0"
+    }
+}
