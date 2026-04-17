@@ -1,0 +1,35 @@
+name: CI для division
+
+# on - событие на котором будет срабатывать наш yml файл, наш так называемый workflow
+on:
+  push:
+    branches: [master, main]
+    # master и main это ветки на которых будет срабатывать наш yml
+  pull_request: 
+    branches: [master, main]
+
+jobs: 
+  test:
+    runs-on: ubuntu-latest 
+    # runs-on Запускаем workflow на выбранной операционной системе
+
+    # шаги, действия, которые мы хотим сделать. Это логика, которую мы хотим исполнить
+    steps:
+    # Клонирование репозитория.
+      - name: Checkout код
+        uses: actions/checkout@v4
+
+    # установка node.js
+      - name: Установка Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+    
+    # установка зависимостей
+      - name: Установка зависимостей
+        run: npm install
+
+    # Запуск тестов
+      - name: Запуск тестов
+        run: npm test
