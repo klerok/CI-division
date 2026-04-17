@@ -8,7 +8,7 @@
 </head>
 <body>
     <main class="calculator">
-        <h1>Simple Division</h1>
+        <h1>Simple Calculator</h1>
 
         <div class="field">
             <label for="firstNumber">First number</label>
@@ -20,10 +20,14 @@
             <input id="secondNumber" type="number" placeholder="Enter second number">
         </div>
 
-        <button id="calculateButton" type="button">Show result</button>
-        <p id="result">Result: -</p>
+        <div class="operations">
+            <button class="operation-button" data-operation="divide" type="button">/ Divide</button>
+            <button class="operation-button" data-operation="multiply" type="button">* Multiply</button>
+            <button class="operation-button" data-operation="plus" type="button">+ Plus</button>
+            <button class="operation-button" data-operation="minus" type="button">- Minus</button>
+        </div>
 
-        <h1>Внесены изменения</h1>
+        <p id="result">Result: -</p>
     </main>
 
     <script type="module" src="index.js"></script>
